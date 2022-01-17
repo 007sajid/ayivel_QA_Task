@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-17T08:45:44.425Z",
+    "end": "2022-01-17T08:45:45.012Z",
+    "duration": 587,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "85734e97-4f29-4789-b6ae-5ecfa9ec5b0c",
+      "title": "",
+      "fullFile": "cypress/integration/API-Testing/Update_One_booking.spec.js",
+      "file": "cypress/integration/API-Testing/Update_One_booking.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "02da8f3a-e5db-42a4-9fde-c4f62e7b471b",
+          "title": "Update_one_booking",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Update one booking by id",
+              "fullTitle": "Update_one_booking Update one booking by id",
+              "timedOut": null,
+              "duration": 573,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'PUT',\n  url: 'https://restful-booker.herokuapp.com/booking/2',\n  headers: {\n    'content-type': 'application/json',\n    'Cookie': \"token=\" + Token + \"\"\n  },\n  body: {\n    \"firstname\": \"sss\",\n    \"lastname\": \"Brown\",\n    \"totalprice\": 111,\n    \"depositpaid\": true,\n    \"bookingdates\": {\n      \"checkin\": \"2018-01-01\",\n      \"checkout\": \"2019-01-01\"\n    },\n    \"additionalneeds\": \"Breakfast\"\n  }\n}).then(response => {\n  expect(response.status).equals(200);\n});",
+              "err": {},
+              "uuid": "63a0b9c0-c863-4104-ac76-28074fa7c849",
+              "parentUUID": "02da8f3a-e5db-42a4-9fde-c4f62e7b471b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63a0b9c0-c863-4104-ac76-28074fa7c849"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 573,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+
+{
+    "baseUrl":"http://uitestingplayground.com/",
+    "chromeWebSecurity": false,
+    "rob": "http://pngimg.com/download/46552",
+    "bob": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "git": "https://github.com/inflectra/ui-test-automation-playground",
+    "ra": "https://www.inflectra.com/Rapise/",
+    "ini": "https://www.inflectra.com/",
+    "ap": "https://www.apache.org/licenses/LICENSE-2.0",
+    "redirectionLimit":35,
+    
+    "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+      "reporterOptions": {
+         "overwrite": false,
+         "html": false,
+         "json": true
+      }
+   
+  }

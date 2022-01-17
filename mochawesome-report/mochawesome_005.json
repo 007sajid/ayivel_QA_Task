@@ -1,0 +1,85 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-01-17T08:47:46.852Z",
+    "end": "2022-01-17T08:49:19.097Z",
+    "duration": 92245,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e29a06d7-c8a0-4f8b-918e-71c4bb585572",
+      "title": "",
+      "fullFile": "cypress/integration/Front-end/Metaverification.spec.js",
+      "file": "cypress/integration/Front-end/Metaverification.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Meta Tags Verification",
+          "fullTitle": "Meta Tags Verification",
+          "timedOut": null,
+          "duration": 92046,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\nvar m = 0;\nvar page = ['/', 'home', 'resources', 'dynamicid', 'classattr', 'hiddenlayers', 'loaddelay', 'ajax', 'clientdelay', 'click', 'textinput', 'scrollbars', 'dynamictable', 'verifytext', 'progressbar', 'visibility', 'sampleapp', 'mouseover', 'nbsp', 'overlapped'];\nvar i = 0;\nvar k = 0;\ncy.get('a').each(items => {\n  var texf = items.text();\n  if (texf === \"CC 4.0 BY-NC\" || texf === \"Rubik's Cube \" || texf === \"Fork the website on GitHub\" || texf === \"Rapise\" || texf === \"Inflectra Corporation\" || texf === \"Apache License 2.0\") {\n    console.log(\"this is not done due to cross origin issues in cypress. First test handles that\");\n  } else {\n    cy.visit(page[i]);\n    cy.get('head > meta').each(meta => {\n      if (m == 0) {\n        cy.wrap(meta).should('have.attr', 'charset', \"utf-8\");\n        m++;\n      } else {\n        cy.wrap(meta).should('have.attr', 'name', \"viewport\");\n        m = 0;\n      }\n      console.log(meta, texf);\n    });\n    cy.go('back');\n    cy.wait(3000);\n    i++;\n  }\n});",
+          "err": {},
+          "uuid": "e147f9ae-13f4-41ae-829c-1b957c1a88a9",
+          "parentUUID": "e29a06d7-c8a0-4f8b-918e-71c4bb585572",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "e147f9ae-13f4-41ae-829c-1b957c1a88a9"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 92046,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

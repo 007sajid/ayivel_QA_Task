@@ -1,0 +1,28 @@
+{
+  "name": "testingzuni",
+  "version": "1.0.0",
+  "description": "testing practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open",
+    "delete:reportFolder": "rmdir /Q /S mochawesome-report",
+    "test:cli": "npm run delete:reportFolder && cypress run --spec 'cypress/integration/*/*.spec.js'",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.2.1",
+    "cypress-localstorage-commands": "^1.6.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "cypress-xpath": "^1.6.2",
+    "mocha": "^9.1.4",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1"
+  },
+  "dependencies": {
+    "latest-version": "^6.0.0"
+  }
+}
